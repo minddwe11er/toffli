@@ -6,6 +6,16 @@ body {
     background: #ffffff;
 }
 
+@media screen and (max-height: 910px) {
+    .about-contacts .block .bio {
+        font-size: 15px !important;
+    }
+
+    .about .block .bio {
+        font-size: 10px !important;
+    }
+}
+
 @media screen and (max-width: 1920px) {
     .about .navBar {
         width: 500px !important;
@@ -297,7 +307,7 @@ body {
 .about .block {
     display: inline-block;
     width: 50%;
-    min-height: 700px;
+    min-height: 500px;
 }
 
 .about .block .bio {
@@ -360,6 +370,7 @@ body {
     padding-bottom: 10px;
     color: #fff;
     font-size: 23px;
+    text-shadow: 0 0 5px #000;
 }
 
 .about-contacts .cont {
