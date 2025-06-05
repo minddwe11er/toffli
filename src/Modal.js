@@ -24,6 +24,8 @@ function Registration(props) {
             case 'exampleForm.ControlTextarea1':
                 setText(event.target.value);
                 break;
+            default:
+                console.log('default');
         }
     };
 
