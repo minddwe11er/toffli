@@ -37,6 +37,7 @@ function Registration(props) {
         setData({ email, name, text });
 
         setValidated(true);
+        console.log(data);
     };
 
     return (
