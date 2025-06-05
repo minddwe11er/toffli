@@ -7,6 +7,25 @@ import Form from 'react-bootstrap/Form';
 function Registration(props) {
     const [validated, setValidated] = useState(false);
     const [isButtonActive, setButtonActive] = useState(false);
+    const [email, setEmail] = useState('');
+    const [name, setName] = useState('');
+    const [text, setText] = useState('');
+    const [data, setData] = useState({});
+
+    const handleChange = event => {
+        switch (event.target.id) {
+            case 'exampleForm.ControlInput1':
+                setEmail(event.target.value);
+                break;
+            case 'exampleForm.ControlInput2':
+                setName(event.target.value);
+                break;
+
+            case 'exampleForm.ControlTextarea1':
+                setText(event.target.value);
+                break;
+        }
+    };
 
     const handleSubmit = event => {
         const form = event.currentTarget;
@@ -14,6 +33,8 @@ function Registration(props) {
             event.stopPropagation();
             event.preventDefault();
         }
+
+        setData({ email, name, text });
 
         setValidated(true);
     };
@@ -54,6 +75,8 @@ function Registration(props) {
                             placeholder="name@beispiel.ch"
                             autoFocus
                             required
+                            onChange={handleChange}
+                            value={email}
                         />
                     </Form.Group>
                     <Form.Group
@@ -61,7 +84,13 @@ function Registration(props) {
                         controlId="exampleForm.ControlInput2"
                     >
                         <Form.Label>Name</Form.Label>
-                        <Form.Control required type="text" placeholder="" />
+                        <Form.Control
+                            onChange={handleChange}
+                            value={name}
+                            required
+                            type="text"
+                            placeholder=""
+                        />
                     </Form.Group>
                     {/* <Form.Group
                         className="mb-3"
@@ -84,7 +113,12 @@ function Registration(props) {
                             Kurze Beschreibung über dich (optional: z. B. deine
                             Interessen oder deine Geschichte)
                         </Form.Label>
-                        <Form.Control as="textarea" rows={4} />
+                        <Form.Control
+                            onChange={handleChange}
+                            value={text}
+                            as="textarea"
+                            rows={4}
+                        />
                     </Form.Group>
                     <Modal.Footer>
                         <Button variant="secondary" onClick={props.onHide}>
