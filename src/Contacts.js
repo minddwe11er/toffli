@@ -46,7 +46,7 @@ const Contacts = () => {
                             <div className="details">
                                 <div className="details-block">
                                     <div className="email">
-                                        vitaliiistinderschweiz@gmail.com
+                                        nykytiuk.vit@gmail.com
                                     </div>
                                     <div>
                                         <a href="tel:+41796506193">
